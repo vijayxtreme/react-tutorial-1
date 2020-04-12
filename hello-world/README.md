@@ -133,14 +133,15 @@ export default Footer
 However, writing out this as JavaScript would be annoying each time we want to create elements, so instead Facebook created JSX as a shortcut to allow us to write HTML instead that gets swapped out for these more mundane functions under the hood.  Long story short, you don't need to write out all the JavaScript, you can use JSX, but realize you always need to import React to be able to return HTML syntax inside your JavaScript -- or you'll get an error.
 
 After saving both these files, you should notice your page working again (hit refresh if for some reason this fails).  If all good you should see: 
-
+```html
 This is the header
 Hello World!
 This is the footer
+```
 
 If you want, you can rearrange the code like so, and you should see:
 
-```
+```jsx
 function App(){
     return (
         <Footer />
@@ -150,10 +151,11 @@ function App(){
 }
 ```
 
-
+```html
 This is the footer
 Hello World
 This is the header
+```
 
 As you can tell React makes it easy to rearrange and reuse components as often as you like.  Think of React components like Lego blocks, you just write your HTML somewhere else separately, then edit that file whenever you need to, and it will get updated wherever you used the `<ComponentName />` tag.  Pretty awesome right?
 
