@@ -34,6 +34,7 @@ Go to your `src` folder and let's edit the `App.js` file.
 
 Replace this:
 
+`src/App.js`
 ```jsx
 function App() {
   return (
@@ -59,6 +60,7 @@ function App() {
 
 with this:
 
+`src/App.js`
 ```jsx
 function App(){
     return (
@@ -79,7 +81,7 @@ Long story short though, you export code from other `.js` files as code componen
 
 Under the hood, `create-react-app` will pull together all the component files and concatenate them together to build the final `App` output that gets returned from your `App` function like so:
 
-`App.js`
+`src/App.js`
 ```jsx
 import Header from './header'
 import Footer from './footer'
@@ -100,7 +102,7 @@ function App(){
 You may notice an error on your webpage, saying something like `header.js` and `footer.js` cannot be found.  That's okay, ignore the error for now.   Go ahead and create two files called `header.js` and `footer.js` and make sure they are in your `src` folder.  You can use the following code to drop into your `header.js` and `footer.js` files respectively.
 
 
-`header.js`
+`src/header.js`
 ```jsx
 import React from "react"
 
@@ -114,7 +116,7 @@ function Header(){
 export default Header
 ```
 
-`footer.js`
+`src/footer.js`
 ```jsx
 import React from "react" 
 
@@ -141,6 +143,7 @@ This is the footer
 
 If you want, you can rearrange the code like so, and you should see:
 
+`src/App.js`
 ```jsx
 function App(){
     return (
@@ -165,6 +168,7 @@ Take a look at the `index.js` file.
 
 You should see the following imports at the top:
 
+`src/index.js`
 ```jsx
 import React from 'react';
 import ReactDOM from 'react-dom';
@@ -174,6 +178,7 @@ import App from './App';
 
 These `import` statements tell our `index.js` file to load React, ReactDOM, our `index.css` as well as our `App.js` file.   It's through these import statements that React is able to load up our own `App.js` content, process it with the React library, then use ReactDOM to inject our code along with css to a target element we select on our HTML page.
 
+`src/index.js`
 ```jsx
 ReactDOM.render(
   <React.StrictMode>

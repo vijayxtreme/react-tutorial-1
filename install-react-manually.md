@@ -182,6 +182,8 @@ Since this was easy, let's take a moment to fill in the `.babelrc` with the conf
 
 Go to your .babelrc and paste in the following `JSON` conifguration:
 
+`.babelrc`
+
 ```javascript
 {
     "presets": ["@babel/env","@babel/preset-react"]
