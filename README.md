@@ -7,7 +7,7 @@
 
 JQuery is a popular JavaScript library; it differs from React in that it is not a framework.  JQuery helps you write less JavaScript that is still cross-browser friendly and efficient.  
 
-You can use JQuery with React, however given diminishing support for browsers like Internet Explorer, (you may not need JQuery)[https://www.youtube.com/watch?v=PFUVmwmLIzY] given modern vanilla JavaScript has many more functions and features that do the same things much faster than JQuery.
+You can use JQuery with React, however given diminishing support for browsers like Internet Explorer, [you may not need JQuery](https://www.youtube.com/watch?v=PFUVmwmLIzY) given modern vanilla JavaScript has many more functions and features that do the same things much faster than JQuery.
 
 As for why to use React over just plain vanilla JavaScript building a website; the answer is that React saves you a lot of time and overhead-- without it you would be responsible for writing a lot more code to keep track of updates to the webpage manually; especially each time something updated or changed.   
 
