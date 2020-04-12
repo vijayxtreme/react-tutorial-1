@@ -91,7 +91,11 @@ Finally create a `<script>` tag of your own, towards the bottom of the page, unl
 </html>
 ```
 
-Using React, we call the function `React.createElement` to create a simple `<h1>` tag, and fill its content with `Hello World`.  We save the result of this function to a local variable called `el`, which we then pass into the `ReactDOM.render` method as an argument along with a DOM element we specify to render it at.   In doing so, our `Hello World` is rendered by React as a `<h1>` tag on our page.
+Using React, we call the function `React.createElement` to create a simple `<h1>` tag, give it no 'props' (we'll visit later) by declaring null, and fill its content with children content: `Hello World`.  
+
+`React.createElement(elementName, props, ...children)` is the syntax under the hood for creating elements.
+
+We save the result of this function to a local variable called `el`, which we then pass into the `ReactDOM.render` method as an argument along with a DOM element we specify to render it at.   In doing so, our `Hello World` is rendered by React as a `<h1>` tag on our page.
 
 If you want to use `JSX` as opposed to JavaScript functions provided by React, you can replace the syntax above with:
 
