@@ -4,13 +4,13 @@ In this simple exercise, you'll build a simple file that outputs "Hello World" u
 
 You'll need the latest version of Node.js, which you can get at [https://nodejs.org].  If unsure, choose the LTS version (Long Term Supported) over the version with the newest features.  Often new features end up breaking other NPM packages that are not yet updated for the new changes.   
 
-*Note if `touch` command not available, be sure to download it or use a command prompt that supports the command -- aka if you're on Windows, download Git Bash to get Linux commands enabled on your prompt.  If on Linux, use your Linux package manager (apt-get, yum) to download touch*.
+**Note:** If `touch` command not available, be sure to download it or use a command prompt that supports the command -- aka if you're on Windows, download Git Bash to get Linux commands enabled on your prompt.  If on Linux, use your Linux package manager (apt-get, yum) to download touch*.
 
 *It should be noted as a best practice, to never use brand new features in production as there could be untested security issues, bugs or incompatibilities that could break your website.  That said, if you know what you are doing and unit test properly, you can skip this best practice suggestion.*
 
 ## The Easy Way (Use NPX)
 
-*The easy way is the preferred way to start a new React project. This way you can focus on creating an application with React first, then just drop the output file into a larger project if you wish (or leave it standalone).  If you are interested in the manual way (because you want to understand what's going on or have a bigger node project) check out the file `install-react-manually.md` one level above this folder.*
+The easy way is the preferred way to start a new React project. This way you can focus on creating an application with React first, then just drop the output file into a larger project if you wish (or leave it standalone).  If you are interested in the manual way (because you want to understand what's going on or have a bigger node project) check out the file `install-react-manually.md` one level above this folder.
 
 Open the command prompt to a directory of your choice and type
 
@@ -20,13 +20,13 @@ cd hello-world
 yarn start
 ```
 
-*Note: Sometimes you'll see developers use (Yarn)[https://yarnpkg.com] as opposed to NPM.  `yarn start` and `yarn build` are pretty much interchangeable for NPM commands, while `yarn add <package name>` is a drop in for `npm install <package name>`.   Yarn is touted to be more efficient than NPM and removes redundancies, so check it out!`*
+**Note:** Sometimes you'll see developers use (Yarn)[https://yarnpkg.com] as opposed to NPM.  `yarn start` and `yarn build` are pretty much interchangeable for NPM commands, while `yarn add <package name>` is a drop in for `npm install <package name>`.   Yarn is touted to be more efficient than NPM and removes redundancies, so check it out!
 
 You should see many packages being downloaded and installed to your project folder, then after you `cd` into the project and `yarn start`, more packages will be loaded and your default browser will open up a webpage with a spiraling React logo.  If you see the logo, you are good to go.   
 
 Be sure to open up a separate tab or command prompt to this same directory to be able to run the instructions given below while your first tab or command prompt continues to run the built in server that watches your files and refreshes on changes of code.
 
-*Note if you didn't use `create-react-app` and you started manually, you won't see the React logo, rather just your port will be running from `http://localhost:{PORT_NUMBER_YOU_CONFIGURED}`.  This is normal, so feel free to keep going thru the tutorial and modifying directions as needed to keep up.  You'll need to create all the files shown below on your own, but you can copy and paste many of the examples or also run `npx create-react-app` in a separate directory, then resource those files created as needed to work manually here.*
+**Note:** If you didn't use `create-react-app` and you started manually, you won't see the React logo, rather just your port will be running from `http://localhost:{PORT_NUMBER_YOU_CONFIGURED}`.  This is normal, so feel free to keep going thru the tutorial and modifying directions as needed to keep up.  You'll need to create all the files shown below on your own, but you can copy and paste many of the examples or also run `npx create-react-app` in a separate directory, then resource those files created as needed to work manually here.
 
 ### Hello World!
 
@@ -95,7 +95,7 @@ function App(){
 }
 ```
 
-*Note the `<></>` syntax is not valid HTML, but in React this is okay, it's called a **Fragment** operator.  In React, all components must be wrapped in a parent div, otherwise React will throw an error.  A fragment is a quick way to wrap your components together.  Alternatively, you can just return one HTML div / section only as a component*
+**Note:** the `<></>` syntax is not valid HTML, but in React this is okay, it's called a **Fragment** operator.  In React, all components must be wrapped in a parent div, otherwise React will throw an error.  A fragment is a quick way to wrap your components together.  Alternatively, you can just return one HTML div / section only as a component
 
 You may notice an error on your webpage, saying something like `header.js` and `footer.js` cannot be found.  That's okay, ignore the error for now.   Go ahead and create two files called `header.js` and `footer.js` and make sure they are in your `src` folder.  You can use the following code to drop into your `header.js` and `footer.js` files respectively.
 
@@ -128,10 +128,9 @@ function Footer(){
 export default Footer
 ```
 
-*Note: you need to import React from "react" to get the React library so that you can return HTML (technically JSX).  Not doing so is a JavaScript error, as JavaScript doesn't know how to return HTML, it can only return JavaScript syntax.  Through the React library, React is able to find any JSX syntax, convert it into React JavaScript functions, and then replace the return value as correct JavaScript syntax your browser will understand.  Ultimately, when you write <footer>Some content</footer>, you're actually writing `React.createElement('footer', 'Some content', {/* additional properties */})`.*
+**Note:** you need to import React from "react" to get the React library so that you can return HTML (technically JSX).  Not doing so is a JavaScript error, as JavaScript doesn't know how to return HTML, it can only return JavaScript syntax.  Through the React library, React is able to find any JSX syntax, convert it into React JavaScript functions, and then replace the return value as correct JavaScript syntax your browser will understand.  Ultimately, when you write <footer>Some content</footer>, you're actually writing `React.createElement('footer', 'Some content', {/* additional properties */})`.
 
-*However, writing out this as JavaScript would be annoying each time we want to create elements, so instead Facebook created JSX as a shortcut to allow us to write HTML instead that gets swapped out for these more mundane functions under the hood.  Long story short, you don't need to write out all the JavaScript, you can use JSX, but realize you always need to import React to be able to return HTML syntax inside your JavaScript -- or you'll get an error.*
-
+However, writing out this as JavaScript would be annoying each time we want to create elements, so instead Facebook created JSX as a shortcut to allow us to write HTML instead that gets swapped out for these more mundane functions under the hood.  Long story short, you don't need to write out all the JavaScript, you can use JSX, but realize you always need to import React to be able to return HTML syntax inside your JavaScript -- or you'll get an error.
 
 After saving both these files, you should notice your page working again (hit refresh if for some reason this fails).  If all good you should see: 
 

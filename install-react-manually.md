@@ -1,6 +1,6 @@
 ## The Manual Way Using NPM (once you've installed Node.js)
 
-*This method is meant for those who want to know what's happening under the hood of the command `npx create-react-app`.  You may as a result of understanding want to swap out certain commands -- maybe you don't like Webpack or want to remove "code bloat".  You may also be writing a larger application with Node on the backend using many other dependencies, and thus just want the packages you need to install locally so you can get going without creating a brand new folder.*
+This method is meant for those who want to know what's happening under the hood of the command `npx create-react-app`.  You may as a result of understanding want to swap out certain commands -- maybe you don't like Webpack or want to remove "code bloat".  You may also be writing a larger application with Node on the backend using many other dependencies, and thus just want the packages you need to install locally so you can get going without creating a brand new folder.
 
 Open the command prompt to a directory of your choice and type:
 ```
@@ -141,7 +141,7 @@ The `devServer` is used for configuring `webpack-dev-server` which we downloaded
 
 *Note: If you are doing this tutorial on a cloud server like AWS, be sure that you have security settings updated so you can enable whatever ports you are trying to access via the Web (by default HTTP ports are just port 80 and 8080).*
 
-*Webpack is a lot of work initially, but the more you do it, the easier it gets.  That said, the team at React (as well as many other major companies) now give you Node Package Executable Commands (`NPX`) that do all this legwork for you; rather than you worrying about what dependencies you need, you let a team like Facebook figure it out, then accept whatever they think as the defaults.  Again though, you are responsible for the way your app behaves in the end, so it's always a good idea to look under the hood and kick the tires every once in a while.  Over time, if you know what you are doing, you can write scripts yourself to automate this process as well.*
+Webpack is a lot of work initially, but the more you do it, the easier it gets.  That said, the team at React (as well as many other major companies) now give you Node Package Executable Commands (`NPX`) that do all this legwork for you; rather than you worrying about what dependencies you need, you let a team like Facebook figure it out, then accept whatever they think as the defaults.  Again though, you are responsible for the way your app behaves in the end, so it's always a good idea to look under the hood and kick the tires every once in a while.  Over time, if you know what you are doing, you can write scripts yourself to automate this process as well.
 
 Before we get to Babel, let's do one more thing:
 
@@ -156,7 +156,7 @@ In your `package.json` file, let's add to our `scripts` property the following N
   },
 ```
 
-*Note: Sometimes you'll see developers use (Yarn)[https://yarnpkg.com] as opposed to NPM, especially if you use (Gatsby)[https://gatsbyjs.org].   `yarn start` and `yarn build` are pretty much interchangeable for NPM commands, while `yarn add <package name>` is a drop in for `npm install <package name>`.   Yarn is touted to be more efficient than NPM and removes redundancies, so check it out!`*
+Sometimes you'll see developers use (Yarn)[https://yarnpkg.com] as opposed to NPM, especially if you use (Gatsby)[https://gatsbyjs.org].   `yarn start` and `yarn build` are pretty much interchangeable for NPM commands, while `yarn add <package name>` is a drop in for `npm install <package name>`.   Yarn is touted to be more efficient than NPM and removes redundancies, so check it out!
 
 You're good to go now with Webpack, but before you start, you still need to install and configure Babel!
 
