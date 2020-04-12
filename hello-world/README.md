@@ -20,7 +20,7 @@ cd hello-world
 yarn start
 ```
 
-**Note:** Sometimes you'll see developers use (Yarn)[https://yarnpkg.com] as opposed to NPM.  `yarn start` and `yarn build` are pretty much interchangeable for NPM commands, while `yarn add <package name>` is a drop in for `npm install <package name>`.   Yarn is touted to be more efficient than NPM and removes redundancies, so check it out!
+**Note:** Sometimes you'll see developers use [Yarn](https://yarnpkg.com) as opposed to NPM.  `yarn start` and `yarn build` are pretty much interchangeable for NPM commands, while `yarn add <package name>` is a drop in for `npm install <package name>`.   Yarn is touted to be more efficient than NPM and removes redundancies, so check it out!
 
 You should see many packages being downloaded and installed to your project folder, then after you `cd` into the project and `yarn start`, more packages will be loaded and your default browser will open up a webpage with a spiraling React logo.  If you see the logo, you are good to go.   
 

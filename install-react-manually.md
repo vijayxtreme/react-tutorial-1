@@ -22,10 +22,10 @@ Answer all the prompts after you type `npm init`.
 
 Now your app has the ability to download packages from Node Package Manager (NPM).  We'll need to install the following dependencies to build a React application from scratch:
 
-- (Webpack)[https://webpack.js.org/] (to search all our JS files, map them together with Babel, receive the output ES5 code, code split for unused JS, uglify and minify the build as a single bundle.js, then drop into a dist folder with HTML file ready to preview.)  You can use the bundle.js separately to drop in with any other larger application you might be running (perhaps with a CMS like Drupal/Wordpress)
-- (Babel)[https://babeljs.io] (to transpile ES6 and JSX code to ES5 code)
-- (React)[https://reactjs.org/] (of course, recommended latest stable version)
-- (ReactDOM)[https://reactjs.org/] (uses React language to interface with DOM API, necessary to be able to drop components into your webpage)
+- [Webpack](https://webpack.js.org/) (to search all our JS files, map them together with Babel, receive the output ES5 code, code split for unused JS, uglify and minify the build as a single bundle.js, then drop into a dist folder with HTML file ready to preview.)  You can use the bundle.js separately to drop in with any other larger application you might be running (perhaps with a CMS like Drupal/Wordpress)
+- [Babel](https://babeljs.io) (to transpile ES6 and JSX code to ES5 code)
+- [React](https://reactjs.org/) (of course, recommended latest stable version)
+- [ReactDOM](https://reactjs.org/) (uses React language to interface with DOM API, necessary to be able to drop components into your webpage)
 
 *Note instructions can always go out of date at the time of viewing, so feel free to resource documentation at each of the websites mentioned above, each dependency has a clickable link*
 
@@ -128,8 +128,8 @@ After we exclude folders we don't want, we tell Webpack what to do after finding
 
 Next, you'll see another test object in our `rules` array that looks for `.css` files.   We tell Webpack to use the `style-loader` and `css-loader` to essentially load our CSS into the DOM (which makes for faster webpage loading than thru an external stylesheet), and allows us to include CSS with our JavaScript files as imports (rather than adding them manually).  Behind the scenes Webpack is still manually stitching everything together, but hey -- you don't have to anymore, and that's a huge time saver.  Now you probably understand why build tools are better than doing things by yourself!
 
-- (Style Loader)[https://www.npmjs.com/package/style-loader]
-- (CSS Loader)[https://www.npmjs.com/package/css-loader]
+- [Style Loader](https://www.npmjs.com/package/style-loader)
+- [CSS Loader](https://www.npmjs.com/package/css-loader)
 
 *Note if you don't want the `css-loader`, or `style-loader`, you do not have to use them.  You can also configure Webpack to load asset files externally if you wish rather than injected into the DOM with `style-loader` if that's what you want too. These loaders are optional for this project, and that's why I'm showing you them manually under the hood with this tutorial.  That said you get all this for free with `npx create-react-app`*
 
@@ -145,7 +145,7 @@ Webpack is a lot of work initially, but the more you do it, the easier it gets. 
 
 Before we get to Babel, let's do one more thing:
 
-In your `package.json` file, let's add to our `scripts` property the following NPM scripts, so that we can just run Webpack via `npm start`.  If we don't do this, then when we need to use webpack, we'll have to write out `node_modules/bin/webpack` each time we want to use it to build our project.  Additionally, I've separated out two scripts, `start` and `build` so when we want to use `webpack-dev-server` we use `npm start` to run the local server in development mode, while if we want to just build everything up for production as a single dist folder, we use `npm build`.   You'll see this pattern a lot especially when you use toolchains like (Next.js)[https://nextjs.org] and (Gatsby)[https://gatsbyjs.org].
+In your `package.json` file, let's add to our `scripts` property the following NPM scripts, so that we can just run Webpack via `npm start`.  If we don't do this, then when we need to use webpack, we'll have to write out `node_modules/bin/webpack` each time we want to use it to build our project.  Additionally, I've separated out two scripts, `start` and `build` so when we want to use `webpack-dev-server` we use `npm start` to run the local server in development mode, while if we want to just build everything up for production as a single dist folder, we use `npm build`.   You'll see this pattern a lot especially when you use toolchains like [Next.js](https://nextjs.org) and [Gatsby](https://gatsbyjs.org).
 
 `package.json`
 ```javascript
@@ -156,7 +156,7 @@ In your `package.json` file, let's add to our `scripts` property the following N
   },
 ```
 
-Sometimes you'll see developers use (Yarn)[https://yarnpkg.com] as opposed to NPM, especially if you use (Gatsby)[https://gatsbyjs.org].   `yarn start` and `yarn build` are pretty much interchangeable for NPM commands, while `yarn add <package name>` is a drop in for `npm install <package name>`.   Yarn is touted to be more efficient than NPM and removes redundancies, so check it out!
+Sometimes you'll see developers use [Yarn](https://yarnpkg.com) as opposed to NPM, especially if you use [Gatsby](https://gatsbyjs.org).   `yarn start` and `yarn build` are pretty much interchangeable for NPM commands, while `yarn add <package name>` is a drop in for `npm install <package name>`.   Yarn is touted to be more efficient than NPM and removes redundancies, so check it out!
 
 You're good to go now with Webpack, but before you start, you still need to install and configure Babel!
 
