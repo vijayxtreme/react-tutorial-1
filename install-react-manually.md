@@ -91,7 +91,7 @@ Finally create a `<script>` tag of your own, towards the bottom of the page, unl
 </html>
 ```
 
-Using React, we call the function `React.createElement` to create a simple `<h1>` tag, give it no 'props' (we'll visit later) by declaring null, and fill its content with children content: `Hello World`.  
+Using React, we call the function `React.createElement` to create a simple `<h1>` tag, give it no 'props' (we'll visit later) by declaring `null`, and fill its content with children content: `Hello World`.  
 
 `React.createElement(elementName, props, ...children)` is the syntax under the hood for creating elements.
 
