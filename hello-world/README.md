@@ -196,4 +196,4 @@ You also need to make sure React is loaded into this index.html webpage, but sin
 
 If you are doing this manually instead, you'll need to make sure that whatever bundle file you created (if you used Webpack to create a bundle.js file), is added to the final `index.html` file so your scripts can be loaded in and target the `root` element.  
 
-Alright, hope this tutorial was helpful for getting started with React!  If you feel good about everything thus far, feel free to move on to the `movie-search` project folder where we will explore even more React terminology, some more items under the hood, and essentially build a search widget that can display the latest movies from Open Movie Database API.
+Alright, hope this tutorial was helpful for getting started with React!  If you feel good about everything thus far, feel free to move on to the `movie-search` project folder where we will explore even more React terminology, some more items under the hood, and essentially build a search widget that can display the latest movies from [Open Movie Database API](https://www.omdbapi.com/).

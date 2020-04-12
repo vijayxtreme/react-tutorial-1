@@ -1,3 +1,99 @@
+## The Manual Way Using Scripts (No NPM)
+
+This method is the lowest barrier to entry.  No webpack needed, just add the scripts for Babel and React to your `index.html` page and you should be good to go.  
+
+**Note:** This method is easy to use, but not recommended for production, as you never want to add more and more scripts to your webpage/web-app.  That will slow down the performance of your site and annoy users.  Hence you'll eventually want to switch to some build system like Webpack that can reduce scripts down into a singular processed file that is optimized for performance with your webpage.   You can still use this build file as a singular script file added to your overall website, so if you are interested, check out instructions with the heading **The Manual Way Using NPM** below.
+
+### Create Your Project Folder and Files
+
+Navigate over to your project folder, then create the following (either with your command prompt or through your favorite code editor).  For simplicity, I will be making a folder called `hello-world` but feel free to name it whatever you like:
+
+`index.html`
+```
+mkdir hello-world
+cd hello-world
+touch index.html
+touch script.js
+```
+
+You can use the following boilerplate for your `index.html`:
+
+`index.html`
+```html
+<html>
+  <head>
+    <title>Hello World</title>
+  </head>
+  <body>
+    <div id="root"></div>
+  </body>
+</html>
+```
+
+Next, get the scripts from React via [React CDN](https://reactjs.org/docs/cdn-links.html).  I've gone ahead and added the development scripts to our `index.html` in the `<head>` section here at the time of writing, but you may want to reference the aforementioned website for fresh content, or if you want the production scripts instead (minified).
+
+`index.html`
+
+```html
+<html>
+  <head>
+    <title>Hello World</title>
+    <script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+  </head>
+  <body>
+    <div id="root"></div>
+  </body>
+</html>
+```
+
+Next, you'll want to add [Babel](https://babeljs.io), so that any ES6 code you write will get transpiled to ES5 syntax.  As always, please reference Babel's website for most up to date information.
+
+Update `index.html` like so:
+
+`index.html`
+```html
+<html>
+  <head>
+    <title>Hello World</title>
+    <script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  </head>
+  <body>
+    <div id="root"></div>
+  </body>
+</html>
+```
+
+Finally create a `<script>` tag of your own, towards the bottom of the page, unless you are going to wait for the DOM to load and then execute your JavaScript (then you can put it in the head too).  Make sure the script is of type `text/babel`, so Babel will know to read the JavaScript and transpile it (otherwise nothing will happen).
+
+`index.html`
+```html
+<html>
+  <head>
+    <title>Hello World</title>
+    <script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="text/babel">
+      //Your ES6 and React code go here!
+      let el = React.createElement('h1', 'Hello World')
+      ReactDOM.render(el, document.getElementById('root'));
+    </script>
+  </body>
+</html>
+```
+
+Using React, we call the function `React.createElement` to create a simple `<h1>` tag, and fill its content with `Hello World`.  We save the result of this function to a local variable called `el`, which we then pass into the `ReactDOM.render` method as an argument along with a DOM element we specify to render it at.   In doing so, our `Hello World` is rendered by React as a `<h1>` tag on our page.
+
+You'll note that we didn't use `JSX` syntax here, and that's because Babel prefers you to do your Babel compilation on the server-side with NPM, rather than through a CDN like with this example.  Hence you are limited to using React JavaScript functions, which are cumbersome to write, but you get the advantage of using React.  If you really do just want to prototype without using Node but want to try `JSX` syntax, I recommend trying solutions like [CodeSandbox](https://codesandbox.io) or [CodePen](https://codepen.io) and loading your environments with React.  
+
+Ready to explore server-side React development with Webpack?  Check out the tutorial below:
+
 ## The Manual Way Using NPM (once you've installed Node.js)
 
 This method is meant for those who want to know what's happening under the hood of the command `npx create-react-app`.  You may as a result of understanding want to swap out certain commands -- maybe you don't like Webpack or want to remove "code bloat".  You may also be writing a larger application with Node on the backend using many other dependencies, and thus just want the packages you need to install locally so you can get going without creating a brand new folder.
