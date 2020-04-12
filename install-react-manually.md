@@ -20,6 +20,7 @@ You can use the following boilerplate for your `index.html`:
 
 `index.html`
 ```html
+<!DOCTYPE html>
 <html>
   <head>
     <title>Hello World</title>
@@ -53,6 +54,7 @@ Update `index.html` like so:
 
 `index.html`
 ```html
+<!DOCTYPE html>
 <html>
   <head>
     <title>Hello World</title>
@@ -70,6 +72,7 @@ Finally create a `<script>` tag of your own, towards the bottom of the page, unl
 
 `index.html`
 ```html
+<!DOCTYPE html>
 <html>
   <head>
     <title>Hello World</title>
@@ -81,7 +84,7 @@ Finally create a `<script>` tag of your own, towards the bottom of the page, unl
     <div id="root"></div>
     <script type="text/babel">
       //Your ES6 and React code go here!
-      let el = React.createElement('h1', 'Hello World')
+      let el = React.createElement('h1', null, 'Hello World')
       ReactDOM.render(el, document.getElementById('root'));
     </script>
   </body>
@@ -90,7 +93,29 @@ Finally create a `<script>` tag of your own, towards the bottom of the page, unl
 
 Using React, we call the function `React.createElement` to create a simple `<h1>` tag, and fill its content with `Hello World`.  We save the result of this function to a local variable called `el`, which we then pass into the `ReactDOM.render` method as an argument along with a DOM element we specify to render it at.   In doing so, our `Hello World` is rendered by React as a `<h1>` tag on our page.
 
-You'll note that we didn't use `JSX` syntax here, and that's because Babel prefers you to do your Babel compilation on the server-side with NPM, rather than through a CDN like with this example.  Hence you are limited to using React JavaScript functions, which are cumbersome to write, but you get the advantage of using React.  If you really do just want to prototype without using Node but want to try `JSX` syntax, I recommend trying solutions like [CodeSandbox](https://codesandbox.io) or [CodePen](https://codepen.io) and loading your environments with React.  
+If you want to use `JSX` as opposed to JavaScript functions provided by React, you can replace the syntax above with:
+
+```html
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Hello World</title>
+    <script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="text/babel">
+      //Your ES6 and React code go here!
+      let el = <h1>Hello World</h1>
+      ReactDOM.render(el, document.getElementById('root'));
+    </script>
+  </body>
+</html>
+```
+
+That said, Babel prefers you compile your scripts server-side via NPM.  If you really do just want to prototype without using Node but want to try `JSX` syntax, I recommend trying solutions like [CodeSandbox](https://codesandbox.io) or [CodePen](https://codepen.io) and loading your environments with React.  
 
 Ready to explore server-side React development with Webpack?  Check out the tutorial below:
 
