@@ -1,11 +1,11 @@
 # What is React?
 
-- Popular JavaScript framework brought to you by Facebook
+- Popular JavaScript library brought to you by Facebook
 - Allows one to build web applications and websites much more quickly, efficiently through the paradigm of reusable components 
 
 ## Why not JQuery or just vanilla JS?
 
-JQuery is a popular JavaScript library; it differs from React in that it is not a framework.  JQuery helps you write less JavaScript that is still cross-browser friendly and efficient.  
+JQuery is also a popular JavaScript library; it differs from React in that is not used to create components.  JQuery helps you write less JavaScript that still cross-browser friendly and efficient.  
 
 You can use JQuery with React, however given diminishing support for browsers like Internet Explorer, [you may not need JQuery](https://www.youtube.com/watch?v=PFUVmwmLIzY) given modern vanilla JavaScript has many more functions and features that do the same things much faster than JQuery.
 
